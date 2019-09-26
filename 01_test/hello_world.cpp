@@ -55,13 +55,14 @@ printf("v2: %lf us\n", (((end.tv_sec * 1000000 + end.tv_usec)	- (start.tv_sec * 
 
 /* ver. 3: MPI */
 
-MPI_Barrier(MPI_COMM_WORLD);
-
 gettimeofday(&start, NULL);
+
+MPI_Barrier(MPI_COMM_WORLD);
 
 printf("Hello World from node %s process %d from %d\n", node_name, world_rank, world_size);
 
 MPI_Barrier(MPI_COMM_WORLD);
+
 gettimeofday(&end, NULL);
 
 printf("v3: %lf us from node %s process %d from %d\n", (((end.tv_sec * 1000000 + end.tv_usec)	- (start.tv_sec * 1000000 + start.tv_usec)))*1.0/numOfIter, node_name, world_rank, world_size);
