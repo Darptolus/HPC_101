@@ -65,7 +65,7 @@ MPI_Barrier(MPI_COMM_WORLD);
 
 gettimeofday(&end, NULL);
 
-printf("v3: %lf us from node %s process %d from %d\n", (((end.tv_sec * 1000000 + end.tv_usec)	- (start.tv_sec * 1000000 + start.tv_usec)))*1.0/numOfIter, node_name, world_rank, world_size);
+printf("v3: %lf us \tfrom node %s process %d from %d\n", (((end.tv_sec * 1000000 + end.tv_usec)	- (start.tv_sec * 1000000 + start.tv_usec)))*1.0/numOfIter, node_name, world_rank, world_size);
 
 /* end */
 MPI_Finalize();
